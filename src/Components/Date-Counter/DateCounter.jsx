@@ -65,7 +65,11 @@ export default function DateCounter() {
             <span style={{ fontWeight: "bold" }}>{date.toDateString()}</span>
           </p>
         </div>
-        <button onClick={handleReset}>Reset</button>
+        {count !== 0 || step !== 1 ? (
+          <button onClick={handleReset}>Reset</button>
+        ) : (
+          ""
+        )}
       </div>
     </>
   );
